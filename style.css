@@ -958,21 +958,23 @@ footer {
         font-size: 1.2rem;
     }
 
-    .results-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
     /* Sticky Search on Mobile */
     .search-container {
         position: sticky;
         top: 8px;
         width: 100%;
         margin-bottom: 30px;
+        z-index: 100;
     }
 
-    .search-container.is-sticky {
-        padding: 0 4px;
+    /* Hide hints while searching/scrolled on mobile */
+    .search-container.is-sticky .search-hints {
+        display: none;
+    }
+
+    /* Also hide hints when there's an active query on mobile */
+    body.is-searching-active .search-hints {
+        display: none;
     }
 
     .voter-card {

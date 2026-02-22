@@ -94,6 +94,7 @@ function setupEventListeners() {
 
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
+            document.body.classList.toggle('is-searching-active', query.length > 0);
             performSearch(query);
         }, 200);
     });
