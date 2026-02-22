@@ -370,6 +370,21 @@ main {
     font-weight: 500;
 }
 
+.home-disclaimer p a,
+.disclaimer a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: var(--transition-fast);
+}
+
+.home-disclaimer p a:hover,
+.disclaimer a:hover {
+    color: var(--accent-primary);
+    text-decoration-thickness: 2px;
+}
+
 .ml-text {
     font-family: var(--font-malayalam);
     color: var(--text-malayalam);
