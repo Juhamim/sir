@@ -835,6 +835,11 @@ footer {
     border: 1px solid var(--border-subtle);
 }
 
+.mobile-detailed-disclaimer {
+    display: none;
+    /* Hidden by default (desktop) */
+}
+
 .disclaimer {
     font-size: 0.75rem !important;
     line-height: 1.5;
@@ -935,11 +940,6 @@ footer {
         margin-bottom: 24px;
     }
 
-    #search-input {
-        font-size: 0.92rem;
-        padding: 12px 8px;
-    }
-
     .hero-stats {
         flex-wrap: wrap;
         gap: 16px;
@@ -967,6 +967,10 @@ footer {
         z-index: 100;
     }
 
+    .search-container.is-sticky {
+        padding: 0 4px;
+    }
+
     /* Hide hints while searching/scrolled on mobile */
     .search-container.is-sticky .search-hints {
         display: none;
@@ -977,14 +981,53 @@ footer {
         display: none;
     }
 
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    /* Mobile Disclaimer Positioning */
+    .desktop-disclaimer {
+        display: none !important;
+    }
+
+    .mobile-detailed-disclaimer {
+        display: block;
+        margin-top: 20px;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        text-align: left;
+    }
+
+    .mobile-detailed-disclaimer .disclaimer {
+        font-size: 0.7rem !important;
+        line-height: 1.4;
+        color: var(--text-secondary);
+        margin-bottom: 10px;
+    }
+
+    .mobile-detailed-disclaimer .ml-text {
+        font-size: 0.75rem !important;
+        margin-bottom: 0;
+    }
+
+    /* Enhanced Voter Cards for Mobile */
     .voter-card {
         padding: 0;
         overflow: hidden;
+        border-radius: var(--radius-md);
+        background: linear-gradient(135deg, rgba(20, 20, 55, 0.8), rgba(15, 15, 45, 0.9));
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .voter-card-header {
-        padding: 16px;
+        padding: 20px 16px;
         background: rgba(255, 255, 255, 0.03);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
     }
 
     .voter-card-actions {
@@ -1004,7 +1047,8 @@ footer {
 
     .detail-item {
         padding: 10px;
-        background: rgba(255, 255, 255, 0.02);
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
         border-radius: var(--radius-sm);
     }
 
