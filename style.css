@@ -873,14 +873,6 @@ footer {
     opacity: 0.6;
 }
 
-.author-credit {
-    font-size: 0.55rem !important;
-    opacity: 0.3;
-    margin-top: 12px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-}
-
 /* ─── Global Animations ───────────────────────────────────────────────────── */
 @keyframes fadeInDown {
     from {
