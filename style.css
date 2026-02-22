@@ -350,6 +350,26 @@ main {
     background: var(--border-subtle);
 }
 
+.home-disclaimer {
+    margin-top: 24px;
+    display: inline-flex;
+    padding: 8px 16px;
+    background: rgba(234, 179, 8, 0.1);
+    border: 1px solid rgba(234, 179, 8, 0.2);
+    border-radius: var(--radius-full);
+    animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+.home-disclaimer p {
+    font-size: 0.75rem;
+    color: #eab308;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
 .ml-text {
     font-family: var(--font-malayalam);
     color: var(--text-malayalam);
@@ -360,6 +380,23 @@ main {
 /* ─── Search Container ────────────────────────────────────────────────────── */
 .search-container {
     animation: fadeInUp 0.6s ease-out 0.3s both;
+    position: sticky;
+    top: 12px;
+    z-index: 100;
+    transition: var(--transition-normal);
+}
+
+.search-container.is-sticky {
+    max-width: 600px;
+    margin: 0 auto;
+    transform: translateY(0);
+}
+
+.search-container.is-sticky .search-box {
+    background: var(--bg-card-hover);
+    backdrop-filter: blur(20px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .search-box {
@@ -893,11 +930,6 @@ footer {
         gap: 16px;
     }
 
-    .results-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
     .stat-divider {
         display: none;
     }
@@ -911,29 +943,70 @@ footer {
         font-size: 1.2rem;
     }
 
-    .voter-card-header {
-        flex-direction: column;
-        align-items: flex-start;
+    .results-grid {
+        grid-template-columns: 1fr;
         gap: 12px;
+    }
+
+    /* Sticky Search on Mobile */
+    .search-container {
+        position: sticky;
+        top: 8px;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .search-container.is-sticky {
+        padding: 0 4px;
+    }
+
+    .voter-card {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .voter-card-header {
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.03);
     }
 
     .voter-card-actions {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-end;
+        gap: 12px;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid var(--border-subtle);
     }
 
     .voter-card-body {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 12px;
         padding: 16px;
     }
 
+    .detail-item {
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: var(--radius-sm);
+    }
+
     .search-hints {
-        gap: 6px;
-        justify-content: center;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 8px;
+        margin-top: 12px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .search-hints::-webkit-scrollbar {
+        display: none;
     }
 
     .hint-chip {
+        flex-shrink: 0;
+        white-space: nowrap;
         font-size: 0.72rem;
         padding: 5px 10px;
     }

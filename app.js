@@ -133,6 +133,22 @@ function setupEventListeners() {
             searchInput.focus();
         }
     });
+
+    // Sticky search observer
+    const searchContainer = document.getElementById('search-container');
+    const stickyAnchor = document.querySelector('.sticky-search-anchor');
+
+    if (searchContainer && stickyAnchor) {
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            searchContainer.classList.toggle('is-sticky', !entry.isIntersecting);
+        }, {
+            threshold: 0,
+            rootMargin: '-60px 0px 0px 0px'
+        });
+
+        observer.observe(stickyAnchor);
+    }
 }
 
 // ─── Search Logic ────────────────────────────────────────────────────────────
