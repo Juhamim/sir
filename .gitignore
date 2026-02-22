@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Data / PDFs (Large files)
+pdfs/*.pdf
+voters_data_old.json
+voters_data_revised.json
+*.txt
+*.png
+*.json
+!voters_data.json
+!package.json
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
